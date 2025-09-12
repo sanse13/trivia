@@ -1,0 +1,83 @@
+---
+interface Tab {
+  id: string;
+  label: string;
+  isActive?: boolean;
+}
+
+interface Props {
+  tabs: Tab[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<div class="menu-tabs">
+  {tabs.map(tab => (
+    <button class={`tab ${tab.isActive ? 'active' : ''}`} data-tab={tab.id}>
+      {tab.label}
+    </button>
+  ))}
+</div>
+
+<style>
+  .menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .tab {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid var(--color-secondary);
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab.active, .tab:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+  }
+
+  @media (max-width: 768px) {
+    .menu-tabs {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Hide all content sections
+        document.querySelectorAll('.menu-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // Show the corresponding content
+        const tabName = tab.getAttribute('data-tab');
+        if (tabName) {
+          const contentElement = document.getElementById(`${tabName}-content`);
+          if (contentElement) {
+            contentElement.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+</script>

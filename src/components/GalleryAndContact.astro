@@ -1,4 +1,6 @@
 ---
+
+
 ---
 
 <section id="gallery">
@@ -53,7 +55,7 @@
                         </svg>
                         <div>
                             <h4>Teléfono</h4>
-                            <p>+34 912 345 678</p>
+                            <p>+34 945 14 31 57</p>
                         </div>
                     </div>
                     
@@ -63,7 +65,7 @@
                         </svg>
                         <div>
                             <h4>Email</h4>
-                            <p>info@cafetrivia.es</p>
+                            <p>abeltrivia96@gmail.com</p>
                         </div>
                     </div>
                     
@@ -74,7 +76,7 @@
                         <div>
                             <h4>Horario</h4>
                             <p>Lun - Vie: 7:00 - 21:00</p>
-                            <p>Sáb - Dom: 8:00 - 22:00</p>
+                            <p>Sábado: 8:00 - 22:00</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +159,7 @@
                 <div class="footer-column">
                     <h4>Enlaces</h4>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
+                        <li><a id="home" href="#">Inicio</a></li>
                         <li><a href="#menu">Menú</a></li>
                         <li><a href="#about">Nosotros</a></li>
                         <li><a href="#gallery">Galería</a></li>
@@ -167,9 +169,9 @@
                 <div class="footer-column">
                     <h4>Contacto</h4>
                     <ul>
-                        <li>Calle del Café 123, 28001 Madrid</li>
-                        <li>+34 912 345 678</li>
-                        <li>info@cafetrivia.es</li>
+                        <li>Calle Nieves Cano 1A, Vitoria-Gasteiz</li>
+                        <li>+34 945 14 31 57</li>
+                        <li>abeltrivia96@gmail.com</li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -188,7 +190,6 @@
 </footer>
 
 <style>
-    /* Gallery Section */
     #gallery {
         padding: 6rem 0;
         text-align: center;
@@ -451,3 +452,11 @@
         }
     }
 </style>
+
+
+<script>
+    document.getElementById('home')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>

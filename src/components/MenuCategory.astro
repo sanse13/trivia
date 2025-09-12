@@ -1,0 +1,36 @@
+---
+interface Props {
+  id: string;
+  isActive?: boolean;
+}
+
+const { id, isActive = false } = Astro.props;
+---
+
+<div class={`menu-content ${isActive ? 'active' : ''}`} id={`${id}-content`}>
+  <div class="menu-grid">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .menu-content {
+    display: none;
+  }
+
+  .menu-content.active {
+    display: block;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 992px) {
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

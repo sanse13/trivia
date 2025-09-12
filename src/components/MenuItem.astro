@@ -1,0 +1,104 @@
+---
+interface Props {
+  title: string;
+  price: string;
+  description: string;
+  rating: number;
+  reviews: number;
+  image: string;
+  alt: string;
+}
+
+const { title, price, description, rating, reviews, image, alt } = Astro.props;
+
+// Generar estrellas basadas en la calificación
+const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+---
+
+<div class="menu-item">
+  <div class="menu-item-img">
+    <img src={image} alt={alt} />
+  </div>
+  <div class="menu-item-content">
+    <div class="menu-item-title">
+      <h3>{title}</h3>
+      <span class="price">{price}</span>
+    </div>
+    <p>{description}</p>
+    <div class="menu-item-rating">
+      <span>{stars}</span>
+      <span class="review-count">({reviews})</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .menu-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .menu-item-img {
+    width: 150px;
+    min-width: 150px;
+    height: 150px;
+  }
+
+  .menu-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .menu-item-content {
+    padding: 1.5rem;
+    flex: 1;
+  }
+
+  .menu-item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-item-title h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+  }
+
+  .price {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+  }
+
+  .menu-item-rating {
+    margin-top: 1rem;
+    color: var(--color-secondary);
+  }
+
+  .review-count {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 576px) {
+    .menu-item {
+      flex-direction: column;
+    }
+    
+    .menu-item-img {
+      width: 100%;
+      height: 200px;
+    }
+  }
+</style>
