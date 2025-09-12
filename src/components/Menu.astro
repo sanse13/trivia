@@ -1,0 +1,260 @@
+---
+---
+
+<section id="menu">
+    <div class="container">
+        <div class="menu-header">
+            <p class="section-subtitle">Nuestro Menú</p>
+            <h2 class="section-title">Descubre nuestras especialidades</h2>
+            <p class="menu-description">
+                Ofrecemos una amplia variedad de cafés de especialidad y deliciosas opciones para acompañar tu experiencia.
+            </p>
+        </div>
+        
+        <div class="menu-tabs">
+            <button class="tab active" data-tab="cafe">Café</button>
+            <button class="tab" data-tab="pasteles">Pasteles</button>
+            <button class="tab" data-tab="desayunos">Desayunos</button>
+        </div>
+        
+        <div class="menu-content active" id="cafe-content">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Espresso" />
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Espresso Clásico</h3>
+                            <span class="price">€2.50</span>
+                        </div>
+                        <p>Nuestro espresso perfecto, preparado con granos 100% arábica de tueste medio.</p>
+                        <div class="menu-item-rating">
+                            <span>★★★★★</span>
+                            <span class="review-count">(124)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Cappuccino" />
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Cappuccino Cremoso</h3>
+                            <span class="price">€3.80</span>
+                        </div>
+                        <p>La perfecta combinación de espresso, leche al vapor y espuma de leche aterciopelada.</p>
+                        <div class="menu-item-rating">
+                            <span>★★★★★</span>
+                            <span class="review-count">(98)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Latte" />
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Latte Artístico</h3>
+                            <span class="price">€4.20</span>
+                        </div>
+                        <p>Espresso con leche vaporizada y una fina capa de espuma, decorado con arte latte.</p>
+                        <div class="menu-item-rating">
+                            <span>★★★★★</span>
+                            <span class="review-count">(156)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Café de especialidad" />
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Café de Especialidad</h3>
+                            <span class="price">€4.50</span>
+                        </div>
+                        <p>Café de origen único preparado con métodos alternativos: V60, Chemex o Aeropress.</p>
+                        <div class="menu-item-rating">
+                            <span>★★★★★</span>
+                            <span class="review-count">(87)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Menu Section */
+    #menu {
+        padding: 6rem 0;
+        background-color: #FFF8EE;
+    }
+
+    .menu-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .menu-description {
+        max-width: 600px;
+        margin: 0 auto;
+        color: var(--color-text-light);
+    }
+
+    .menu-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .tab {
+        padding: 0.8rem 2rem;
+        background: transparent;
+        border: 2px solid var(--color-secondary);
+        border-radius: 30px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: var(--color-primary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .tab.active, .tab:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-background);
+    }
+
+    .menu-content {
+        display: none;
+    }
+
+    .menu-content.active {
+        display: block;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 2rem;
+    }
+
+    .menu-item {
+        display: flex;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .menu-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .menu-item-img {
+        width: 150px;
+        min-width: 150px;
+        height: 150px;
+    }
+
+    .menu-item-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .menu-item-content {
+        padding: 1.5rem;
+        flex: 1;
+    }
+
+    .menu-item-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .menu-item-title h3 {
+        font-size: 1.3rem;
+        color: var(--color-primary);
+    }
+
+    .price {
+        font-weight: 700;
+        color: var(--color-secondary);
+        font-size: 1.2rem;
+    }
+
+    .menu-item-rating {
+        margin-top: 1rem;
+        color: var(--color-secondary);
+    }
+
+    .review-count {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 992px) {
+        .menu-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-tabs {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .menu-item {
+            flex-direction: column;
+        }
+        
+        .menu-item-img {
+            width: 100%;
+            height: 200px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.tab');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all content sections
+                document.querySelectorAll('.menu-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the corresponding content
+                const tabName = tab.getAttribute('data-tab');
+                if (tabName) {
+                    const contentElement = document.getElementById(`${tabName}-content`);
+                    if (contentElement) {
+                        contentElement.classList.add('active');
+                    }
+                }
+            });
+        });
+    });
+</script>
