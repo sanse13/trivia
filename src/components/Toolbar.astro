@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000; /* Increased z-index to ensure it stays on top */
     box-shadow: 0 2px 8px rgba(74, 44, 42, 0.2);
 }
 
@@ -85,16 +85,39 @@
     display: none;
 }
 
-@media (max-width: 768px) {
-    .toolbar nav {
-        flex-direction: column;
-        gap: 1rem;
+    @media (max-width: 768px) {
+        .toolbar nav {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+        }
+        
+        .toolbar ul {
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .logo {
+            margin-bottom: 0.5rem;
+        }
     }
     
-    .toolbar ul {
-        gap: 1.5rem;
+    @media (max-width: 576px) {
+        .toolbar {
+            position: absolute;
+            background-color: rgba(74, 44, 42, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .toolbar ul {
+            gap: 1rem;
+        }
+        
+        .toolbar a {
+            font-size: 1rem;
+        }
     }
-}
 </style>
 
 <div class="toolbar">
