@@ -1,205 +1,230 @@
 ---
-import MenuCategory from './MenuCategory.astro';
-import MenuItem from './MenuItem.astro';
-import MenuTabs from './MenuTabs.astro';
+import MenuCategory from "./MenuCategory.astro";
+import MenuItem from "./MenuItem.astro";
+import MenuTabs from "./MenuTabs.astro";
 
 const menuTabs = [
-  { id: 'cafe', label: 'Café', isActive: true },
-  { id: 'pasteles', label: 'Pasteles', isActive: false },
-  { id: 'tortillas', label: 'Tortillas', isActive: false },
-  { id: 'desayunos', label: 'Desayunos', isActive: false }
+  { id: "cafe", label: "Café", isActive: true },
+  { id: "pasteles", label: "Pasteles", isActive: false },
+  { id: "tortillas", label: "Tortillas", isActive: false },
+  { id: "desayunos", label: "Desayunos", isActive: false },
 ];
 
 const cafeItems = [
   {
-    title: 'Espresso Clásico',
-    price: '€2.50',
-    description: 'Nuestro espresso perfecto, preparado con granos 100% arábica de tueste medio.',
+    title: "Espresso Clásico",
+    price: "€2.50",
+    description:
+      "Nuestro espresso perfecto, preparado con granos 100% arábica de tueste medio.",
     rating: 5,
     reviews: 124,
-    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    alt: 'Espresso'
+    image:
+      "https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+    alt: "Espresso",
   },
   {
-    title: 'Cappuccino Cremoso',
-    price: '€3.80',
-    description: 'La perfecta combinación de espresso, leche al vapor y espuma de leche aterciopelada.',
+    title: "Cappuccino Cremoso",
+    price: "€3.80",
+    description:
+      "La perfecta combinación de espresso, leche al vapor y espuma de leche aterciopelada.",
     rating: 5,
     reviews: 98,
-    image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    alt: 'Cappuccino'
+    image:
+      "https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+    alt: "Cappuccino",
   },
   {
-    title: 'Latte Artístico',
-    price: '€4.20',
-    description: 'Espresso con leche vaporizada y una fina capa de espuma, decorado con arte latte.',
+    title: "Latte Artístico",
+    price: "€4.20",
+    description:
+      "Espresso con leche vaporizada y una fina capa de espuma, decorado con arte latte.",
     rating: 5,
     reviews: 156,
-    image: 'https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    alt: 'Latte'
+    image:
+      "https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+    alt: "Latte",
   },
   {
-    title: 'Café de Especialidad',
-    price: '€4.50',
-    description: 'Café de origen único preparado con métodos alternativos: V60, Chemex o Aeropress.',
+    title: "Café de Especialidad",
+    price: "€4.50",
+    description:
+      "Café de origen único preparado con métodos alternativos: V60, Chemex o Aeropress.",
     rating: 5,
     reviews: 87,
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    alt: 'Café de especialidad'
-  }
+    image:
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+    alt: "Café de especialidad",
+  },
 ];
 
 const pastelesItems = [
   {
-    title: 'Tarta de Zanahoria',
-    price: '€4.80',
-    description: 'Deliciosa tarta casera de zanahoria con nueces y cobertura de queso crema.',
+    title: "Tarta de Zanahoria",
+    price: "€4.80",
+    description:
+      "Deliciosa tarta casera de zanahoria con nueces y cobertura de queso crema.",
     rating: 5,
     reviews: 68,
-    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
-    alt: 'Tarta de zanahoria'
+    image:
+      "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+    alt: "Tarta de zanahoria",
   },
   {
-    title: 'Croissant de Chocolate',
-    price: '€3.50',
-    description: 'Croissant artesanal relleno de chocolate belga de alta calidad.',
+    title: "Croissant de Chocolate",
+    price: "€3.50",
+    description:
+      "Croissant artesanal relleno de chocolate belga de alta calidad.",
     rating: 5,
     reviews: 92,
-    image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    alt: 'Croissant de chocolate'
-  }
+    image:
+      "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    alt: "Croissant de chocolate",
+  },
 ];
 
 const tortillasItems = [
   {
-    title: 'Pintxo de Tortilla Tradicional',
-    price: '€3.20',
-    description: 'Auténtica tortilla española jugosa por dentro y dorada por fuera, servida en pintxo.',
+    title: "Pintxo de Tortilla Picante",
+    price: "€3.20",
+    description:
+      "Auténtica tortilla española jugosa por dentro y dorada por fuera, servida en pintxo. La más popular del Café Trivia por su sabor picante.",
     rating: 5,
     reviews: 115,
-    image: 'https://images.unsplash.com/photo-1639669794539-952631b44515?q=80&w=1521&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Tortilla Tradicional'
+    image: "tortilla-picante.jpg",
+    alt: "Tortilla Tradicional",
   },
   {
-    title: 'Pintxo de Tortilla con Cebolla',
-    price: '€3.50',
-    description: 'Deliciosa tortilla con cebolla caramelizada que le aporta un toque dulce y especial.',
+    title: "Pintxo de Tortilla con Cebolla",
+    price: "€3.50",
+    description:
+      "Deliciosa tortilla con cebolla caramelizada que le aporta un toque dulce y especial.",
     rating: 5,
     reviews: 98,
-    image: 'https://images.pexels.com/photos/14941246/pexels-photo-14941246.jpeg',
-    alt: 'Tortilla con Cebolla'
-  }
+    image:
+      "https://images.pexels.com/photos/14941246/pexels-photo-14941246.jpeg",
+    alt: "Tortilla con Cebolla",
+  },
 ];
 
 const desayunosItems = [
   {
-    title: 'Desayuno Completo',
-    price: '€9.50',
-    description: 'Café o té, zumo natural, tostadas con tomate y aceite, y croissant o bollo artesanal.',
+    title: "Desayuno Completo",
+    price: "€9.50",
+    description:
+      "Café o té, zumo natural, tostadas con tomate y aceite, y croissant o bollo artesanal.",
     rating: 5,
     reviews: 76,
-    image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg',
-    alt: 'Desayuno completo'
+    image: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg",
+    alt: "Desayuno completo",
   },
   {
-    title: 'Bowl de Yogur con Frutas',
-    price: '€6.80',
-    description: 'Yogur griego con miel, frutas frescas de temporada y granola casera.',
+    title: "Bowl de Yogur con Frutas",
+    price: "€6.80",
+    description:
+      "Yogur griego con miel, frutas frescas de temporada y granola casera.",
     rating: 5,
     reviews: 54,
-    image: 'https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
-    alt: 'Bowl de yogur'
-  }
+    image:
+      "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+    alt: "Bowl de yogur",
+  },
 ];
 ---
 
 <section id="menu">
-    <div class="container">
-        <div class="menu-header">
-            <p class="section-subtitle">Nuestro Menú</p>
-            <h2 class="section-title">Descubre nuestras especialidades</h2>
-            <p class="menu-description">
-                Ofrecemos una amplia variedad de cafés de especialidad y deliciosas opciones para acompañar tu experiencia.
-            </p>
-        </div>
-        
-        <MenuTabs tabs={menuTabs} />
-        
-        <MenuCategory id="cafe" isActive={true}>
-            {cafeItems.map(item => (
-                <MenuItem 
-                    title={item.title}
-                    price={item.price}
-                    description={item.description}
-                    rating={item.rating}
-                    reviews={item.reviews}
-                    image={item.image}
-                    alt={item.alt}
-                />
-            ))}
-        </MenuCategory>
-        
-        <MenuCategory id="pasteles">
-            {pastelesItems.map(item => (
-                <MenuItem 
-                    title={item.title}
-                    price={item.price}
-                    description={item.description}
-                    rating={item.rating}
-                    reviews={item.reviews}
-                    image={item.image}
-                    alt={item.alt}
-                />
-            ))}
-        </MenuCategory>
-        
-        <MenuCategory id="tortillas">
-            {tortillasItems.map(item => (
-                <MenuItem 
-                    title={item.title}
-                    price={item.price}
-                    description={item.description}
-                    rating={item.rating}
-                    reviews={item.reviews}
-                    image={item.image}
-                    alt={item.alt}
-                />
-            ))}
-        </MenuCategory>
-        
-        <MenuCategory id="desayunos">
-            {desayunosItems.map(item => (
-                <MenuItem 
-                    title={item.title}
-                    price={item.price}
-                    description={item.description}
-                    rating={item.rating}
-                    reviews={item.reviews}
-                    image={item.image}
-                    alt={item.alt}
-                />
-            ))}
-        </MenuCategory>
+  <div class="container">
+    <div class="menu-header">
+      <p class="section-subtitle">Nuestro Menú</p>
+      <h2 class="section-title">Descubre nuestras especialidades</h2>
+      <p class="menu-description">
+        Ofrecemos una amplia variedad de cafés de especialidad y deliciosas
+        opciones para acompañar tu experiencia.
+      </p>
     </div>
+
+    <MenuTabs tabs={menuTabs} />
+
+    <MenuCategory id="cafe" isActive={true}>
+      {
+        cafeItems.map((item) => (
+          <MenuItem
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            rating={item.rating}
+            reviews={item.reviews}
+            image={item.image}
+            alt={item.alt}
+          />
+        ))
+      }
+    </MenuCategory>
+
+    <MenuCategory id="pasteles">
+      {
+        pastelesItems.map((item) => (
+          <MenuItem
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            rating={item.rating}
+            reviews={item.reviews}
+            image={item.image}
+            alt={item.alt}
+          />
+        ))
+      }
+    </MenuCategory>
+
+    <MenuCategory id="tortillas">
+      {
+        tortillasItems.map((item) => (
+          <MenuItem
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            rating={item.rating}
+            reviews={item.reviews}
+            image={item.image}
+            alt={item.alt}
+          />
+        ))
+      }
+    </MenuCategory>
+
+    <MenuCategory id="desayunos">
+      {
+        desayunosItems.map((item) => (
+          <MenuItem
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            rating={item.rating}
+            reviews={item.reviews}
+            image={item.image}
+            alt={item.alt}
+          />
+        ))
+      }
+    </MenuCategory>
+  </div>
 </section>
 
 <style>
-    /* Menu Section */
-    #menu {
-        padding: 6rem 0;
-        background-color: #FFF8EE;
-    }
+  /* Menu Section */
+  #menu {
+    padding: 6rem 0;
+    background-color: #fff8ee;
+  }
 
-    .menu-header {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
+  .menu-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-    .menu-description {
-        max-width: 600px;
-        margin: 0 auto;
-        color: var(--color-text-light);
-    }
+  .menu-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+  }
 </style>
-
-
